@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	background: url("../images/wp3195757.jpg");
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<br /> <br />
+		<h2 style="color: white;">All Reviews Submitted by candidates :</h2>
+
+		<div class="table-responsive" style="background: white;">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Experience</th>
+						<th>Company name</th>
+						<th>Interview Date</th>
+						<th>Interview Mode</th>
+						<th>Job Description</th>
+						<th>primary Focus</th>
+						<th>Job Applied For</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="review : ${reviews}">
+						<td th:text="${review.id}"></td>
+						<td th:text="${review.name}"></td>
+						<td th:text="${review.email}"></td>
+						<td th:text="${review.experience}"></td>
+						<td th:text="${review.companyName}"></td>
+						<td th:text="${review.interviewDate}"></td>
+						<td th:text="${review.interviewMode}"></td>
+						<td th:text="${review.jobDescription}"></td>
+						<td th:text="${review.primaryFocus}"></td>
+						<td th:text="${review.appliedFor}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>
